@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste spring</title>
+</head>
+
+    <body>
+    <header>
+        <h1>MUDI</h1>
+        <h3>logout</h3>
+    </header>
+    <main>
+        <header>
+            <section>Titulo da tela </section>
+            <nav>menu horizontal</nav>
+        </header>
+        <br>
+        <br>
+        <article th:each="pedido : ${pedidos}">
+            <header>
+                <section th:text="${pedido.nomeProduto}">Titulo Produto:</section>
+                <section>Valor: <span th:text="${pedido.valorNegociado}">1000.0</span></section>
+                <section> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
+            </header>
+            <main>
+                <section>Produto:</section>
+                <section> <input th:value="${pedido.urlProduto}" value="url do produto" /></section>
+
+                <section>Descrição</section>
+                <section><textarea th:text="${pedido.descricao}">Descrição do produto</textarea></section>
+            </main>
+            <aside>
+                <figure> <img th:src="${pedido.urlImagem}"
+                              src="https://e7.pngegg.com/pngimages/494/693/png-clipart-logo-shopping-list-design-product-shopping-list-purple-angle.png">
+                </figure>
+            </aside>
+        </article>
+    </main>
+    </body>
+</html>

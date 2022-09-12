@@ -2,40 +2,49 @@
 <html lang="pt-br" xmlns:th="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teste spring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-    <body>
+    <body >
     <header>
         <h1>MUDI</h1>
         <h3>logout</h3>
     </header>
-    <main>
+    <main class="container">
         <header>
             <section>Titulo da tela </section>
             <nav>menu horizontal</nav>
         </header>
         <br>
-        <br>
-        <article th:each="pedido : ${pedidos}">
-            <header>
-                <section th:text="${pedido.nomeProduto}">Titulo Produto:</section>
-                <section>Valor: <span th:text="${pedido.valorNegociado}">1000.0</span></section>
-                <section> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
-            </header>
-            <main>
-                <section>Produto:</section>
-                <section> <input th:value="${pedido.urlProduto}" value="url do produto" /></section>
 
-                <section>Descrição</section>
-                <section><textarea th:text="${pedido.descricao}">Descrição do produto</textarea></section>
-            </main>
-            <aside>
-                <figure> <img th:src="${pedido.urlImagem}"
-                              src="https://e7.pngegg.com/pngimages/494/693/png-clipart-logo-shopping-list-design-product-shopping-list-purple-angle.png">
-                </figure>
-            </aside>
+        <article class="card text-bg-light mb-3" th:each="pedido : ${pedidos}">
+            <div class="row g-0">
+                <header>
+                    <section class="card-header" th:text="${pedido.nomeProduto}">Titulo Produto:</section>
+                </header>
+                <aside class="col-12 col-sm-4">
+                    <figure> <img th:src="${pedido.urlImagem}" class="img-fluid rounded-start"
+                                  src="https://e7.pngegg.com/pngimages/494/693/png-clipart-logo-shopping-list-design-product-shopping-list-purple-angle.png">
+                    </figure>
+                </aside>
+                <aside class="col-12 col-sm-8">
+                    <main class="card-body">
+                        <section class="row">
+                            <section class="col-12 col-md-4">Valor: <span th:text="${pedido.valorNegociado}">1000.0</span></section>
+                            <section class="col-12 col-md-8"> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
+                        </section>
+                        <section>Produto:</section>
+                        <section> <input class="form-control" th:value="${pedido.urlProduto}" value="url do produto" /></section>
+                        <section>Descrição</section>
+                        <section><textarea class="form-control" th:text="${pedido.descricao}">Descrição do produto</textarea></section>
+                    </main>
+                </aside>
+            </div>
         </article>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
 </html>

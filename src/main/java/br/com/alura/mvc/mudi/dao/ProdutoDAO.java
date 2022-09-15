@@ -14,4 +14,8 @@ public class ProdutoDAO {
     public List<Produto> resgatarTodosProdutos() {
         return this.produtoRepository.findAll();
     }
+
+    public void cadastrarPedido(Produto produto) {
+        this.produtoRepository.save(produto);
+    }
 }

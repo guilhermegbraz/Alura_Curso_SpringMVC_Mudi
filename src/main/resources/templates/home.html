@@ -7,41 +7,57 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-    <body >
-    <header>
-        <h1>MUDI</h1>
-        <h3>logout</h3>
-    </header>
-    <main class="container">
-        <header>
-            <section>Titulo da tela </section>
-            <nav>menu horizontal</nav>
-        </header>
-        <br>
+    <body class="text-bg-light">
 
-        <article class="card text-bg-light mb-3" th:each="pedido : ${pedidos}">
-            <div class="row g-0">
+    <header class="d-flex justify-content-between p-4 mb-5 bg-dark text-primary">
+        <h1>MUDI</h1>
+        <a href=""> <button type="button" class="btn btn-outline-primary">logout</button></a>
+
+    </header>
+
+    <main class="container">
+        <header class="mb-5">
+            <section class="container-fluid bg-dark text-light p-5">
+                    <h1 class="display-4">Meus pedidos </h1>
+            </section>
+            <nav class="navbar navbar-expand bg-light d-flex justify-content-between p-3">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="">Todos</a>
+                    <a class="nav-link"  href="">Aguardando</a>
+                    <a class="nav-link" href="">Aprovado</a>
+                    <a class="nav-link" href="">Entregue</a>
+                </div>
+                <div>
+                    <a href=""><button type="button" class="btn btn-dark">Novo</button></a>
+                </div>
+            </nav>
+        </header>
+
+        <article class="card text-light bg-dark mb-3" th:each="pedido : ${pedidos}">
+
                 <header>
-                    <section class="card-header" th:text="${pedido.nomeProduto}">Titulo Produto:</section>
+                    <section class="card-header" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
                 </header>
-                <aside class="col-12 col-sm-4">
-                    <figure> <img th:src="${pedido.urlImagem}" class="img-fluid rounded-start"
-                                  src="https://e7.pngegg.com/pngimages/494/693/png-clipart-logo-shopping-list-design-product-shopping-list-purple-angle.png">
-                    </figure>
-                </aside>
-                <aside class="col-12 col-sm-8">
-                    <main class="card-body">
-                        <section class="row">
-                            <section class="col-12 col-md-4">Valor: <span th:text="${pedido.valorNegociado}">1000.0</span></section>
-                            <section class="col-12 col-md-8"> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
-                        </section>
-                        <section>Produto:</section>
-                        <section> <input class="form-control" th:value="${pedido.urlProduto}" value="url do produto" /></section>
-                        <section>Descrição</section>
-                        <section><textarea class="form-control" th:text="${pedido.descricao}">Descrição do produto</textarea></section>
-                    </main>
-                </aside>
-            </div>
+                <main class="card-body">
+                    <div class="row">
+                        <aside class="col-sm-4 mb-3">
+                            <img th:src="${pedido.urlImagem}" class="img-thumbnail"
+                                  src="https://e7.pngegg.com/pngimages/494/693/png-clipart-logo-shopping-list-design-product-shopping-list-purple-angle.png" >
+                        </aside>
+
+                        <aside class="col-12 col-sm-8 mb-3">
+                            <section class="row">
+                                <section class="col-12 col-md-4">Valor: <span th:text="${pedido.valorNegociado}">1000.0</span></section>
+                                <section class="col-12 col-md-8"> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
+                            </section>
+                            <section>Produto:</section>
+                            <section> <input class="form-control" th:value="${pedido.urlProduto}" value="url do produto" /></section>
+                            <section>Descrição</section>
+                            <section><textarea class="form-control" th:text="${pedido.descricao}">Descrição do produto</textarea></section>
+
+                        </aside>
+                    </div>
+                </main>
         </article>
     </main>
 

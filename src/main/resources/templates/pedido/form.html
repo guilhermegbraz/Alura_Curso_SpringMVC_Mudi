@@ -1,22 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Novo Pedido</title>
+<html lang="pt-br">
+<head th:replace="~{base :: head}"></head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .black{
-            background-color: #18191a;
-        }
-    </style>
-</head>
 <body class="black">
-    <header class="d-flex justify-content-between p-4 mb-5 bg-dark text-primary">
-        <h1>Mudi</h1>
-        <a href=""><button type="button" class="btn btn-outline-primary">Logout</button></a>
-    </header>
+    <header th:replace="~{base :: cabecalho}"></header>
 
     <main class="container">
         <header class="mb-5">

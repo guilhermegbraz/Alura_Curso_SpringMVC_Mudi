@@ -11,6 +11,10 @@ public class ProdutoDAO {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    public void setProdutoRepository(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
+
     public List<Produto> resgatarTodosProdutos() {
         return this.produtoRepository.findAll();
     }

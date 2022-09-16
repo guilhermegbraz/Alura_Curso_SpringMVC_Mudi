@@ -9,6 +9,16 @@ public class RequisicaoProduto {
     String url_imagem;
     String descricao_produto;
 
+    public Produto getPedido() {
+        Produto pedido = new Produto();
+        pedido.setNomeProduto(this.nome_produto);
+        pedido.setUrlProduto(this.url_produto);
+        pedido.setUrlImagem(this.url_imagem);
+        pedido.setDescricao(this.descricao_produto);
+
+        return pedido;
+    }
+
     public String getNome_produto() {
         return nome_produto;
     }
@@ -41,13 +51,5 @@ public class RequisicaoProduto {
         this.descricao_produto = descricao_produto;
     }
 
-    public Produto getPedido() {
-        Produto pedido = new Produto();
-        pedido.setNomeProduto(this.nome_produto);
-        pedido.setUrlProduto(this.url_produto);
-        pedido.setUrlImagem(this.url_imagem);
-        pedido.setDescricao(this.descricao_produto);
 
-        return pedido;
-    }
 }

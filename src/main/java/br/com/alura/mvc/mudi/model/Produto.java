@@ -17,8 +17,11 @@ public class Produto {
     private String urlProduto;
     private String urlImagem;
     private String descricao;
+    private final LocalDate dataCadastrado;
 
-    public Produto() {}
+    public Produto() {
+        this.dataCadastrado = LocalDate.now();
+    }
 
     public Produto(String nomeProduto, BigDecimal valorNegociado, LocalDate dataDaEntrega,
                    String urlProduto, String urlImagem, String descricao) {
@@ -28,6 +31,7 @@ public class Produto {
         this.urlProduto = urlProduto;
         this.urlImagem = urlImagem;
         this.descricao = descricao;
+        this.dataCadastrado = LocalDate.now();
     }
 
     public String getNomeProduto() {
@@ -76,5 +80,9 @@ public class Produto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public LocalDate getDataCadastrado() {
+        return this.dataCadastrado;
     }
 }

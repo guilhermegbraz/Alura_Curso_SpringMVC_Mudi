@@ -19,6 +19,7 @@ public class HomeController {
     @GetMapping("/home")
     public String home(Model model) {
         List<Produto> pedidos = produtoDAO.resgatarTodosProdutos();
+        pedidos.sort((p1, p2) -> p1.getNomeProduto().compareTo(p2.getNomeProduto()));
         model.addAttribute("pedidos", pedidos);
 
         return "home";

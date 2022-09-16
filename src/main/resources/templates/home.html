@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teste spring</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .black{
+            background-color: #18191a;
+        }
+    </style>
 </head>
 
-    <body class="bg-light">
+    <body class="black">
 
     <header class="d-flex justify-content-between p-4 mb-5 bg-dark text-primary">
         <h1>MUDI</h1>
@@ -16,18 +21,18 @@
 
     <main class="container">
         <header class="mb-5">
-            <section class="container-fluid bg-dark text-light p-5">
-                    <h1 class="display-4">Meus pedidos </h1>
+            <section style="border-radius: 5px" class=" bg-dark text-primary p-5">
+                    <h1 class="display-4 ">Meus pedidos </h1>
             </section>
-            <nav class="navbar navbar-expand bg-light d-flex justify-content-between p-3">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="">Todos</a>
-                    <a class="nav-link"  href="">Aguardando</a>
-                    <a class="nav-link" href="">Aprovado</a>
-                    <a class="nav-link" href="">Entregue</a>
+            <nav class=" border-bottom border-primary navbar navbar-expand d-flex justify-content-between p-3  ">
+                <div class="navbar-nav ">
+                    <a class="nav-link active text-primary" href="">Todos</a>
+                    <a class="nav-link text-muted"  href="">Aguardando</a>
+                    <a class="nav-link text-muted" href="">Aprovado</a>
+                    <a class="nav-link text-muted" href="">Entregue</a>
                 </div>
                 <div>
-                    <a href="/pedido/formulario"><button type="button" class="btn btn-dark">Novo</button></a>
+                    <a href="/pedido/formulario"><button type="button" class="btn btn-outline-primary black text-primary">Novo</button></a>
                 </div>
             </nav>
         </header>
@@ -35,9 +40,9 @@
         <article class="card text-light bg-dark mb-3" th:each="pedido : ${pedidos}">
 
                 <header>
-                    <section class="card-header" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
+                    <section class="card-header text-primary" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
                 </header>
-                <main class="card-body">
+                <main class="card-body text-muted">
                     <div class="row">
                         <aside class="col-sm-4 mb-3">
                             <img th:src="${pedido.urlImagem}" class="img-thumbnail"
@@ -50,9 +55,9 @@
                                 <section class="col-12 col-md-8"> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
                             </section>
                             <section>Produto:</section>
-                            <section> <input class="form-control" th:value="${pedido.urlProduto}" value="url do produto" /></section>
+                            <section> <input class="form-control bg-dark text-light" th:value="${pedido.urlProduto}" value="url do produto" /></section>
                             <section>Descrição</section>
-                            <section><textarea class="form-control" th:text="${pedido.descricao}">Descrição do produto</textarea></section>
+                            <section><textarea class="form-control bg-dark text-light" th:text="${pedido.descricao}">Descrição do produto</textarea></section>
 
                         </aside>
                     </div>

@@ -6,13 +6,13 @@ import javax.validation.constraints.NotBlank;
 
 public class RequisicaoProduto {
 
-    @NotBlank
+    @NotBlank(message = "O nome do produto não pode ser nulo")
     String nome_produto;
 
-    @NotBlank
+    @NotBlank(message = "a url do produto é obrigatoria")
     String url_produto;
 
-    @NotBlank
+    @NotBlank(message = "a url da imagem é obrigatoria")
     String url_imagem;
 
     String descricao_produto;

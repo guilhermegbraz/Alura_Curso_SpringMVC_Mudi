@@ -19,8 +19,28 @@ public class Produto {
     private String descricao;
     private final LocalDate dataCadastrado;
 
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
+
     public Produto() {
         this.dataCadastrado = LocalDate.now();
+        this.status = StatusPedido.AGUARDANDO;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
     }
 
     public Produto(String nomeProduto, BigDecimal valorNegociado, LocalDate dataDaEntrega,
@@ -32,6 +52,7 @@ public class Produto {
         this.urlImagem = urlImagem;
         this.descricao = descricao;
         this.dataCadastrado = LocalDate.now();
+        this.status = StatusPedido.AGUARDANDO;
     }
 
     public String getNomeProduto() {

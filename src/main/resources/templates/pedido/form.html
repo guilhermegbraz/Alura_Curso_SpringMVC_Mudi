@@ -22,7 +22,7 @@
             <section class="card-body p-3 ">
                 <div class="mb-3">
                     <label for="nome_produto" class="form-label">Produto</label>
-                    <input th:field="*{nome_produto}" th:errorclass="is-invalid " class="form-control border border-white bg-dark text-light" type="text" placeholder="nome do produto"  title="informe qual o nome do produto">
+                    <input th:field="*{nome_produto}" th:errorclass="is-invalid" class="form-control border border-white bg-dark text-light" type="text" placeholder="nome do produto"  title="informe qual o nome do produto">
                     <div th:errors="*{nome_produto}" class="invalid-feedback">
                         Erros do nome do produto
                     </div>

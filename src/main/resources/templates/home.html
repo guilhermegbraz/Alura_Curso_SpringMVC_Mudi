@@ -12,10 +12,10 @@
                 <section th:replace="~{base :: titulo('Meus Pedidos')}"></section>
                 <nav class=" border-bottom border-primary navbar navbar-expand d-flex justify-content-between p-3  ">
                     <div class="navbar-nav ">
-                        <a class="nav-link active text-primary" href="">Todos</a>
-                        <a class="nav-link text-muted"  href="">Aguardando</a>
-                        <a class="nav-link text-muted" href="">Aprovado</a>
-                        <a class="nav-link text-muted" href="">Entregue</a>
+                        <a class="nav-link active text-primary" href="/home">Todos</a>
+                        <a class="nav-link text-muted"  href="/home/aguardando">Aguardando</a>
+                        <a class="nav-link text-muted" href="/home/aprovado">Aprovado</a>
+                        <a class="nav-link text-muted" href="/home/entregue">Entregue</a>
                     </div>
                     <div>
                         <a href="/pedido/formulario"><button type="button" class="btn btn-outline-primary black text-primary">Novo</button></a>
@@ -23,10 +23,15 @@
                 </nav>
             </header>
 
-            <article class="card text-light bg-dark mb-3" th:each="pedido : ${pedidos}">
+
+            <article class="card text-light bg-dark mb-4" th:each="pedido : ${pedidos}">
 
                     <header>
-                        <section class="card-header text-primary" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
+                        <th:block th:switch="${pedido.status.name()}">
+                            <section th:case="'AGUARDANDO'" class="card-header text-primary border border-warning" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
+                            <section th:case="'APROVADO'" class="card-header text-primary border border-primary" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
+                            <section th:case="'ENTREGUE'" class="card-header text-primary" th:text="${pedido.nomeProduto}"><h4>Titulo Produto:</h4></section>
+                        </th:block>
                     </header>
                     <main class="card-body text-muted">
                         <div class="row">

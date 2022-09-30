@@ -1,6 +1,7 @@
-# Alura_Curso_SpringMVC_Mudi
+# Alura_Curso_SpringMVC_Mudi 
 
 projeto para acompanhar o treinamento da Alura sobre Spring MVC
+
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
@@ -13,6 +14,11 @@ projeto para acompanhar o treinamento da Alura sobre Spring MVC
 ![Imgur](https://i.imgur.com/GEQpUtX.png#vitrinedev)
 
 ## Detalhes do projeto
+
+<h4 align="center"> 
+	🚧  Status: 🚧 Em construção...  🚧
+</h4>
+
 A aplicação permite que o usuário poste pedidos de produtos que gostaria de comprar para que outros usuários consigam 
 visualizar esses pedidos e entrar em contato com o comprador para negociar a compra do produto.
 

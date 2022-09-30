@@ -42,6 +42,7 @@ public class HomeController {
         pedidos.sort(Comparator.comparing(Produto::getNomeProduto));
         ModelAndView model = new ModelAndView("home");
         model.addObject("pedidos", pedidos);
+        model.addObject("status", status);
 
         return model;
     }

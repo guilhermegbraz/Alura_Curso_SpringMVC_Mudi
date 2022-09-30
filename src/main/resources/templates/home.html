@@ -8,14 +8,15 @@
         <header th:replace="~{base :: cabecalho}"></header>
 
         <main class="container">
+
             <header class="mb-5">
                 <section th:replace="~{base :: titulo('Meus Pedidos')}"></section>
                 <nav class=" border-bottom border-primary navbar navbar-expand d-flex justify-content-between p-3  ">
                     <div class="navbar-nav ">
-                        <a class="nav-link active text-primary" href="/home">Todos</a>
-                        <a class="nav-link text-muted"  href="/home/aguardando">Aguardando</a>
-                        <a class="nav-link text-muted" href="/home/aprovado">Aprovado</a>
-                        <a class="nav-link text-muted" href="/home/entregue">Entregue</a>
+                        <a th:classappend="${status} == null ? 'text-primary' : 'text-muted' " class=" nav-item nav-link" href="/home">Todos</a>
+                        <a th:classappend="${status} == 'aguardando' ? 'text-primary' : 'text-muted' " class=" nav-item  nav-link "  href="/home/aguardando">Aguardando</a>
+                        <a th:classappend="${status} == 'aprovado' ? 'text-primary' : 'text-muted' " class="nav-item nav-link " href="/home/aprovado">Aprovado</a>
+                        <a th:classappend="${status} == 'entregue' ? 'text-primary' : 'text-muted' " class="nav-item nav-link " href="/home/entregue">Entregue</a>
                     </div>
                     <div>
                         <a href="/pedido/formulario"><button type="button" class="btn btn-outline-primary black text-primary">Novo</button></a>
@@ -42,8 +43,8 @@
 
                             <aside class="col-12 col-sm-8 mb-3">
                                 <section class="row">
-                                    <section class="col-12 col-md-4">Valor: <span th:text="${pedido.valorNegociado}">1000.0</span></section>
-                                    <section class="col-12 col-md-8"> Data de entrega <span th:text="${pedido.dataDaEntrega}">10/09/2022</span></section>
+                                    <section class="col-12 col-md-4">Valor: <span th:text="${'R$' + #numbers.formatDecimal(pedido.valorNegociado,3,'POINT', 2, 'COMMA')}">1000.0</span></section>
+                                    <section class="col-12 col-md-8"> Data de entrega <span th:text="${#temporals.format(pedido.dataDaEntrega, 'dd/MM/yyyy')}">30/09/2022</span></section>
                                 </section>
                                 <section>Produto:</section>
                                 <section> <input class="form-control bg-dark text-light" th:value="${pedido.urlProduto}" value="url do produto" /></section>

@@ -11,7 +11,7 @@ projeto para acompanhar o treinamento da Alura sobre Spring MVC
 | :fire: Desafio     | 
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![Imgur](https://i.imgur.com/GEQpUtX.png#vitrinedev)
+![Imgur](https://i.imgur.com/hD8EfXR.png#vitrinedev)
 
 ## Detalhes do projeto
 
@@ -21,6 +21,19 @@ projeto para acompanhar o treinamento da Alura sobre Spring MVC
 
 A aplicação permite que o usuário poste pedidos de produtos que gostaria de comprar para que outros usuários consigam 
 visualizar esses pedidos e entrar em contato com o comprador para negociar a compra do produto.
+
+### Features
+- [x] Cadastro de produtos
+
+O usuario pode, através de um forms, cadastrar um pedido de produto que gostaria de adiquirir
+
+![Imgur](https://i.imgur.com/pZcuoMtl.png)
+
+Após a validação das informações inseridas, o pedido é cadastrado no banco de dados com o status "Aguardando" e estara disponivel para vizualização.
+
+- [x] Exibir pedidos categorizados por status
+
+- [ ] Cadastro de usuario
 
 ### back-end
 O back foi feito utilizando as tecnologias:

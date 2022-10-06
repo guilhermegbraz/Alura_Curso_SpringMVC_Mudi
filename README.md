@@ -33,6 +33,12 @@ Após a validação das informações inseridas, o pedido é cadastrado no banco
 
 - [x] Exibir pedidos categorizados por status
 
+Os pedidos ficam classificados a partir do status na página inicial:
+
+![Imgur](https://i.imgur.com/hD8EfXR.png)
+
+![Imgur](https://i.imgur.com/RBfZ3bc.png)
+
 - [ ] Cadastro de usuario
 
 ### back-end
